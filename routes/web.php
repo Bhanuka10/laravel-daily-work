@@ -5,7 +5,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/task', function () {
+    return view('Task');
+});
 
-use App\Http\Controllers\PagesController;
 
-Route::get('/about', [PagesController::class, 'indexAbout']);
