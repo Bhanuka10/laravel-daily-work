@@ -9,4 +9,7 @@ Route::get('/task', function () {
     return view('Task');
 });
 
+use App\Http\Controllers\TaskController;
 
+
+Route::post('/savetask', [TaskController::class, 'store']);

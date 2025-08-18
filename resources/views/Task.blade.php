@@ -14,10 +14,12 @@
             <h1>Daily Tasks</h1>
             <div class="row">
                 <div class="col-md-6 mx-auto">
-                    <form action="post" action="SaveTask">
-                        <input type="text" class="form-control" placeholder="Enter your Task" >
+                    <form action="/savetask" method="post">
+                        @csrf
+
+                        <input type="text" class="form-control" placeholder="Enter your Task" name="task">
                    
-                     <button class="btn btn-primary" type="Submit " value="SAVE">SAVE</button>
+                     <button class="btn btn-primary" type="submit " value="SAVE">SAVE</button>
                     <button class="btn btn-warning" type="button" value="CLEAR">CLEAR</button>
 
                     </form>
