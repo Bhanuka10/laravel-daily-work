@@ -10,6 +10,12 @@ class TaskController extends Controller
 {
     public function store(Request $request){
         $task = new Task; //module Task this can access to any thing in database
+
+        $request->validate([
+    'task' => 'required|max:255|min:5'
+]);
+        
+        
         $task->task = $request->input('task');
         $task->save();
         return redirect()->back();
