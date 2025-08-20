@@ -40,11 +40,13 @@
                 <th> ID</th>
                 <th>Task</th>
                 <th>completed</th>
+                @foreach($data as $task)
                 <tr>
-                    <td>1</td>
-                    <td>i have learnt laraval today</td>
-                    <td>not yet</td>
+                    <td>{{ $task->id }}</td>
+                    <td>{{ $task->task }}</td>
+                    <td>{{ $task->completed ? 'yes' : 'no' }}</td>
                 </tr>
+                @endforeach
   
 </table>
 </div>
