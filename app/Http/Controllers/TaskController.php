@@ -18,6 +18,8 @@ class TaskController extends Controller
         
         $task->task = $request->input('task');
         $task->save();
-        return redirect()->back();
+        $data = Task::all();
+        dd($data);
+        // return redirect()->back();
     }
 }
