@@ -15,3 +15,5 @@ use App\Http\Controllers\TaskController;
 
 
 Route::post('/savetask', [TaskController::class, 'store']);
+
+Route::get('/mark-completed/{id}', [TaskController::class, 'markCompleted']);
