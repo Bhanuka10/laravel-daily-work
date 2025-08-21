@@ -44,7 +44,12 @@
                 <tr>
                     <td>{{ $task->id }}</td>
                     <td>{{ $task->task }}</td>
-                    <td>{{ $task->completed ? 'yes' : 'no' }}</td>
+                    <td>@if($task->completed)
+                        <span class="badge bg-success">Yes</span>
+                    @else
+                        <span class="badge bg-danger">No</span>
+                    @endif
+                    </td>
                 </tr>
                 @endforeach
   
