@@ -29,7 +29,7 @@
 
                         <input type="text" class="form-control" placeholder="Enter your Task" name="task">
                    
-                     <button class="btn btn-primary" type="submit " value="SAVE">SAVE</button>
+                     <button class="btn btn-primary" type="submit" value="SAVE">SAVE</button>
                     <button class="btn btn-warning" type="button" value="CLEAR">CLEAR</button>
 
                     </form>
@@ -40,6 +40,7 @@
                 <th> ID</th>
                 <th>Task</th>
                 <th>completed</th>
+                <th>Actions</th>
                 @foreach($data as $task)
                 <tr>
                     <td>{{ $task->id }}</td>
@@ -49,6 +50,11 @@
                     @else
                         <span class="badge bg-danger">No</span>
                     @endif
+                    </td>
+                    
+                    <td>
+                        <a href="/mark-completed/{{ $task->id }}" class="btn btn-primary">Completed</a>
+
                     </td>
                 </tr>
                 @endforeach
