@@ -23,4 +23,11 @@ class TaskController extends Controller
         return view('task')->with('data', $data) ;
      
     }
+
+    public function markCompleted($id){
+        $task = Task::find($id);
+        $task->completed= 1; // Assuming you want to mark the task as completed
+        $task->save();
+       return redirect('/task')->with('success', 'Task saved successfully!');
+    }
 }
