@@ -53,7 +53,11 @@
                     </td>
                     
                     <td>
+                        @if(!$task->completed)
                         <a href="/mark-completed/{{ $task->id }}" class="btn btn-primary">Completed</a>
+                        @else
+                        <a href="/mark-incomplete/{{ $task->id }}" class="btn btn-warning">Incomplete</a>
+                        @endif
 
                     </td>
                 </tr>
