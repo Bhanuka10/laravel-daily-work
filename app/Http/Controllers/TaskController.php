@@ -31,4 +31,10 @@ class TaskController extends Controller
        return redirect('/task');
     
     }
+    public function markIncomplete($id){
+        $task = Task::find($id);
+        $task->completed= 0; // Assuming you want to mark the task as incomplete
+        $task->save();
+       return redirect('/task');
+    }
 }
