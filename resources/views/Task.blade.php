@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+                <div class="col-12">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
@@ -36,7 +36,7 @@
                    
 
             
-            <table class="table table-dark table-striped">
+            <table class="table table-dark table-striped w-400">
                 <th> ID</th>
                 <th>Task</th>
                 <th>completed</th>
@@ -53,13 +53,18 @@
                     </td>
                     
                     <td>
-                        @if(!$task->completed)
-                        <a href="/mark-completed/{{ $task->id }}" class="btn btn-primary">Completed</a>
-                        @else
-                        <a href="/mark-incomplete/{{ $task->id }}" class="btn btn-warning">Incomplete</a>
-                        @endif
+                        <div class="d-flex gap-2">
+                            @if(!$task->completed)
+                                <a href="/mark-completed/{{ $task->id }}" class="btn btn-primary">Completed</a>
+                            @else
+                                <a href="/mark-incomplete/{{ $task->id }}" class="btn btn-warning">Incomplete</a>
+                            @endif
+                            <a href="/delete-task/{{ $task->id }}" class="btn btn-danger">Delete</a>
+                        </div>
+                         
 
                     </td>
+
                 </tr>
                 @endforeach
   
