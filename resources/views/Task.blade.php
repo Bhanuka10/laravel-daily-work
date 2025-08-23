@@ -60,6 +60,7 @@
                                 <a href="/mark-incomplete/{{ $task->id }}" class="btn btn-warning">Incomplete</a>
                             @endif
                             <a href="/delete-task/{{ $task->id }}" class="btn btn-danger">Delete</a>
+                            <a href="/edit-task/{{ $task->id }}" class="btn btn-info">Update</a>
                         </div>
                          
 
