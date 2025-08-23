@@ -42,4 +42,8 @@ class TaskController extends Controller
         $task->delete();
         return redirect('/task');
     }
+    public function edit($id){
+        $task = Task::find($id);
+        return view('edit-task')->with('task', $task);
+    }
 }
