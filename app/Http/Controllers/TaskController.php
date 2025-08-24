@@ -46,4 +46,15 @@ class TaskController extends Controller
         $task = Task::find($id);
         return view('edit-task')->with('task', $task);
     }
-}
+    public function update(Request $request){
+        $request->validate([
+            'task' => 'required|max:255|min:5'
+        ]);
+        $task = $request->task;
+        $id = $request->id;
+        $data = Task::find($id);
+        $data -> task = $task;
+        $data->save();
+        return redirect('/task');
+    }
+  }
