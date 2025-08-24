@@ -23,3 +23,5 @@ Route::get('/mark-incomplete/{id}', [TaskController::class, 'markIncomplete']);
 Route::get('/delete-task/{id}', [TaskController::class, 'destroy']);
 
 Route::get('/edit-task/{id}', [TaskController::class, 'edit']);
+
+Route::post('/saveupdate', [TaskController::class, 'update']);
