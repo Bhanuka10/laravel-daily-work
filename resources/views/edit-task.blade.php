@@ -24,10 +24,11 @@
                          </div>
                     
                     @endforeach
-                    <form action="/savetask" method="post">
+                    <form action="/saveupdate" method="post">
                         @csrf
 
                         <input type="text" class="form-control" placeholder="Enter your Task" name="task" value="{{ $task->task }}">
+                        <input type="hidden" name="id" value="{{ $task->id }}">
                    
                      <button class="btn btn-primary" type="submit" value="UPDATE">UPDATE</button>
                      <button class="btn btn-warning" type="button" value="CLEAR">CLEAR</button>
